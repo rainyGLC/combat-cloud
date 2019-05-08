@@ -1,0 +1,30 @@
+<view class="page-container">
+  <!-- 用户信息模块 -->
+  <view class="user-section" wx:if="{{userInfo.nickName}}">
+    <!-- <text class="user-nickName">未登录</text> -->
+
+    <text class="user-nickName">{{userInfo.nickName ? userInfo.nickName : '未登录'}}</text>
+    <image class="user-avatarUrl" src="{{userInfo.avatarUrl}}"></image>
+  </view>
+
+  <!-- 导航模块 -->
+  <view class="navigator-section" wx:if="{{userInfo.nickName}}">
+    <navigator class="navigator-item" url="/pages/create/create">
+      <view class="navigator-item-bd">发布微博</view>
+      <view class="navigator-item-ft navigator-item-ft_in-access"></view>
+    </navigator>
+    <navigator class="navigator-item" url="/pages/my_topic/my_topic">
+      <view class="navigator-item-bd">我的微博</view>
+      <view class ="navigator-item-ft navigator-item-ft_in-access"></view>
+    </navigator>
+    <navigator class="navigator-item" url="/pages/my_reply/my_reply">
+      <view class="navigator-item-bd">我的回复</view>
+      <view class="navigator-item-ft navigator-item-ft_in-access"></view>
+    </navigator>
+  </view>
+
+  <!-- 登录模块 --> 
+  <button class="login-btn" hover-class="login-btn-hover" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" wx:if="{{!userInfo.nickName}}">
+    授权登录使用
+  </button>
+</view>

@@ -1,0 +1,79 @@
+/*用户模块*/
+.user-section{
+  padding: 50rpx 40rpx;
+  display: flex;
+}
+
+.user-section .user-nickName{
+  flex: 1;
+  font-size: 24px;
+  line-height: 150rpx;
+  color: #333;
+}
+
+.user-section .user-avatarUrl{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+}
+/*导航模块*/
+.navigator-section{
+  border-top: 20rpx solid #f5f5f5;
+}
+
+.navigator-item{
+  display: flex;
+  height: 118rpx;
+  line-height: 118rpx;
+  border-bottom: 2rpx solid #e4e4e4;
+  padding: 0 40rpx;
+}
+
+.navigator-item .navigator-item-bd{
+  flex: 1;
+  font-size: 16px;
+  color: #666;
+}
+
+.navigator-item-ft{
+  color: #999;
+  font-size: 14px;
+}
+
+.navigator-item-ft_in-access{
+  position:relative;
+
+}
+
+.navigator-item-ft_in-access:after {
+  content:" ";
+  display:inline-block;
+  height: 6px;
+  width: 6px;
+  border-width: 2px 2px 0 0;
+  border-color: #c8c8cd;
+  border-style:solid;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  margin-top: -4px;
+}
+/*登录按钮*/
+.login-btn{
+  position: fixed;
+  left: 50%;
+  bottom: 60px;
+  margin-left: -260rpx;
+  width: 520rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  background-color: #000;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 0;
+}
+
+.login-btn_hover{
+  opacity: .8;
+}
