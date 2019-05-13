@@ -5,44 +5,33 @@ Page({
     userInfo:{},
     logged:false
   },
+
   onLoad:function(){
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          this.getOpenid();
-          App.globalData.userInfo = res.userInfo
-          wx.getUserInfo({
-            success: res => {
-              this.setData({
-                userInfo: res.userInfo
-              })
-            }
-          })
-        }
-      }
-    })
+    this.getUserInfo();
   },
-  onGetUserInfo:function(e){
-    if (!this.logged && e.detail.userInfo) {
+  // 获取全局对象中的 App.globalData.userInfo
+  // 判断是否有昵称 nickName
+  // 如果有，把用户信息设置到 Page.data.userInfo 内
+  getUserInfo:function(){
+    let userInfo = App.globalData.userInfo;
+    console.log(userInfo,'aaa');
+    if(userInfo) {
       this.setData({
-        logged: true,
-        userInfo: e.detail.userInfo
+        logged:true,
+        userInfo:userInfo
       })
     }
   },
-  getOpenid: function() {
-    wx.cloud.callFunction({
-      name: 'login',
-      data: {},
-      success: res => {
-        console.log('[云函数] [login] user openid: ', res.result.openid)
-        App.globalData.openid = res.result.openid
-      },
-      fail: err => {
-        console.error('[云函数] [login] 调用失败', err)
-      }
-    })
+  onGetUserInfo:function(e){
+    let userInfo = e.detail.userInfo;
+    console.log(userInfo);
+    if(userInfo){
+      App.getUserInfo((res) => {
+        console.log(res)
+        this.setData({
+          userInfo:res.userInfo
+        })
+      })
+    }
   }
-
 })

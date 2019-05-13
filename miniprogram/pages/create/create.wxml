@@ -1,1 +1,21 @@
-<view>create</view>
+<view class="page-container">
+  <!-- 用户输入模块 -->
+  <view class="form-section">
+    <textarea class="form-textarea" bindinput="handleChange" value="{{content}}" placeholder="这一刻的想法" />
+  </view>
+
+<!-- 用户资源模块 -->
+  <view class="resource-section">
+    <view class="uploader-container" bindtap="doUpload">
+      <view class="resourece-add" wx:if="{{!imageUrl && !videoUrl}}"></view>
+      <image class="uploader-image" wx:if="{{imageUrl}}" src="{{imageUrl}}" mode="aspectFill"  bindtap="previewImg"></image>
+      <video class="uploader-viode"  wx:if="{{videoUrl}}" src="{{videoUrl}}" object-fit="cover"></video>
+    </view>
+  </view>
+
+
+  <!-- 发布按钮模块 -->
+  <view class="btn-section">
+    <button class="submitBtn" hover-class="submitBtn_hover" bindtap="handleSubmit">发布</button>
+  </view>
+</view>

@@ -1,3 +1,7 @@
 {
-  
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance" : 60,
+  "usingComponents": {
+    "custom-topics": "/components/topic/topic"
+  }
 }

@@ -1,1 +1,59 @@
-<view>INDEX</view>
+<view class="page-container">
+  <custom-topics topics="{{topics}}"></custom-topics>
+  <!-- <view class="topics-list">
+    <navigator class="topics-item" wx:key="item._id" wx:for="{{topics}}" url="/pages/detail/detail?id={{item._id}}">
+      <image class="topics-image topics-avatar" src="{{item.userInfo.avatarUrl}}"></image>
+      <view class="topics-userInfo">
+        <view class="userInfo-nickName">{{item.userInfo.nickName}}</view>
+        <view class="userInfo-content">{{item.content}}</view>
+        <view class="topics-resource">
+          <image wx:if="{{item.imageUrl}}" data-url="{{item.imageUrl}}" class="resource-image" src="{{item.imageUrl}}" mode="widthFix" catchtap="previewImage"></image>
+
+          <video wx:if="{{item.videoUrl}}" class="resource-video" src="{{item.videoUrl}}" objectFit="cover" id="{{'video_' + item._id}}" controls="{{false}}">
+            <cover-view class="controls" data-id="{{'video_' + item._id}}" catchtap="previewVideo"></cover-view>
+          </video>
+
+        </view>
+        <view class="topics-reply">
+          <text class="topics-reply-date">{{item.time_display}}</text>
+          <text wx:if="{{item.reply_count}}" class="topics-reply-number">{{item.reply_count}} 回复</text>
+        </view>
+      </view>
+    </navigator> -->
+<!-- 
+    <navigator class="topics-item" url="/pages/detail/detail">
+      <image class="topics-image topics-avatar"></image>
+      <view class="topics-userInfo">
+        <view class="userInfo-nickName">昵称</view>
+        <view class="userInfo-content">内容</view>
+        <view class="topics-resource">
+          <image class="resource-image" src="" mode="widthFix"></image>
+        </view>
+        <view class="topics-reply">
+          <text class="topics-reply-date">2019-05-08</text>
+          <text class="topics-reply-number">10 回复</text>
+        </view>
+      </view>
+    </navigator> -->
+
+
+    <!-- <navigator class="topics-item" url="/pages/detail/detail">
+      <image class="topics-image topics-avatar"></image>
+      <view class="topics-userInfo">
+        <view class="userInfo-nickName">昵称</view>
+        <view class="userInfo-content">内容</view>
+        <view class="topics-resource">
+          <video class="resource-video" src="" objectFit="cover">
+            <cover-view class="controls"></cover-view>
+          </video>
+
+        </view>
+        <view class="topics-reply">
+          <text class="topics-reply-date">2019-05-08</text>
+          <text class="topics-reply-number">10 回复</text>
+        </view>
+      </view>
+    </navigator> -->
+<!-- 
+  </view> -->
+</view>

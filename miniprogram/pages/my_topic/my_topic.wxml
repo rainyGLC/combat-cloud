@@ -1,1 +1,3 @@
-my_topic.wxml
+<view class="page-container">
+  <custom-topics topics="{{topics}}"></custom-topics>
+</view>

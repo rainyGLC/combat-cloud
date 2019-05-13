@@ -1,1 +1,57 @@
-<view>detail</view>
+<view class="page-container">
+
+  <!-- 内容信息模块 -->
+  <view class="topic-container">
+    <view class="topic-userInfo" wx:if="{{topic.userInfo}}">
+      <image class="topic-userInfo-avatar" src="{{topic.userInfo.avatarUrl}}"></image>
+      <view class="topic-userInfo-content">
+        <view class="topic-userInfo-nickName">{{topic.userInfo.nickName}}</view> 
+        <veiw class="topic-userInfo-date_display">{{topic.date_display}}</veiw>
+      </view>
+    </view>
+    <view class="topic-content">{{topic.content}}</view>
+
+    <view class="topics-resource">
+      <image wx:if="{{topic.imageUrl}}" class="resource-item" data-url="{{topic.imageUrl}}" catchtap="handlePreviewImage" src="{{topic.imageUrl}}" mode="widthFix"></image>
+      <video wx:if="{{topic.videoUrl}}" class="resource-item" src="{{topic.videoUrl}}" id="{{'video_' + topic._id}}" controls="{{false}}" objectFit="cover">
+        <cover-view class="resource-video-controls" data-id="{{'video_' + topic._id}}"  catchtap="handlePreviewVideo"></cover-view>
+      </video>
+    </view>
+
+  </view>
+
+  <!-- 登录模块 -->
+  <view class="login-container" wx:if="{{!userInfo.nickName}}">
+    <button class="login-btn" hover-class="login-btn_hover" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">登录后评论</button>
+  </view>
+
+  <!-- 评论功能模块 -->
+  <view class="textarea-container" wx:if="{{userInfo.nickName}}">
+    <textarea class="textarea-input" placeholder="评论点啥" bindinput="handleChange" value="{{message}}"></textarea>
+    <button class="textarea-btn" bindtap="handleSubmit">评论</button>
+  </view>
+
+  <!-- 评论列表模块 -->
+  <view class="reply-container">
+    <view class="reply-item"  wx:key="{{replies._id}}" wx:for="{{ replies }}">
+      <image class="reply-ft reply-avatar" src="{{item.userInfo.avatarUrl}}"></image>
+      <view class="reply-bd">
+        <view class="reply-nickName">{{item.userInfo.nickName}}</view>
+        <view class="reply-content">{{item.content}}</view>
+        <view class="reply-info">
+          <text class="reply-reply-date">{{item.date_display}}</text>
+        </view>
+      </view>
+    </view>
+    <!-- <view class="reply-item">
+      <image class="reply-ft reply-avatar" src=""></image>
+      <view class="reply-bd">
+        <view class="reply-nickName">昵称</view>
+        <view class="reply-content">回复内容</view>
+        <view class="reply-info">
+          <text class="reply-reply-date">2019-10-10</text>
+        </view>
+      </view>
+    </view> -->
+  </view>
+</view>
