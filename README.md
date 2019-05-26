@@ -39,11 +39,7 @@
 
 
 效果图如下：
-![图片](https://raw.githubusercontent.com/rainyGLC/combat-cloud/master/images/37.png)
-![图片](https://raw.githubusercontent.com/rainyGLC/combat-cloud/master/images/38.png)
-![图片](https://raw.githubusercontent.com/rainyGLC/combat-cloud/master/images/39.png)
-![图片](https://raw.githubusercontent.com/rainyGLC/combat-cloud/master/images/40.png)
-![图片](https://raw.githubusercontent.com/rainyGLC/combat-cloud/master/images/41.png)
+![图片](https://raw.githubusercontent.com/rainyGLC/combat-cloud/master/images/37.png)![图片](https://raw.githubusercontent.com/rainyGLC/combat-cloud/master/images/38.png)![图片](https://raw.githubusercontent.com/rainyGLC/combat-cloud/master/images/39.png)![图片](https://raw.githubusercontent.com/rainyGLC/combat-cloud/master/images/40.png)![图片](https://raw.githubusercontent.com/rainyGLC/combat-cloud/master/images/41.png)
 
 
 
@@ -285,8 +281,8 @@
 7. 书写完毕后，打开微信开发者工具的编辑器，在目录中寻找到 incReply 文件夹，右键选择上传并部署「 云端安装依赖 」
 8 在点击回复事件中调用云函数
 
-![图片](https://raw.githubusercontent.com/rainyGLC/combat-cloud/master/images/37.png)
-![图片](https://raw.githubusercontent.com/rainyGLC/combat-cloud/master/images/38.png)
+![图片](https://raw.githubusercontent.com/rainyGLC/combat-cloud/master/images/17.png)
+![图片](https://raw.githubusercontent.com/rainyGLC/combat-cloud/master/images/19.png)
 
 
 1.9 -我的发布
